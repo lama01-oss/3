@@ -2,66 +2,56 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>من نحن - كرتون حياتك</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #fefefe, #e0f7fa);
-      color: #333;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     main {
+      flex: 1;
       padding: 2rem;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 2rem;
-      color: #6a4e77;
-    }
-
-    p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      max-width: 600px;
+      max-width: 800px;
       margin: auto;
-    }
-
-    footer {
-      background: linear-gradient(to right, #ccffcc, #fce4ec);
-      padding: 1rem;
       text-align: center;
-      color: #444;
-      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- تضمين الشريط العلوي -->
-  <header style="background: linear-gradient(to right, #ffcce5, #ccf2ff); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-    <h1 style="font-size: 1.5rem; color: #6a4e77;">✨ كرتون حياتك</h1>
-    <nav>
-      <a href="index.html" style="margin-left: 1rem; font-weight: bold; text-decoration: none; color: #555;">الرئيسية</a>
-      <a href="about.html" style="margin-left: 1rem; font-weight: bold; text-decoration: none; color: #555;">من نحن</a>
-      <a href="contact.html" style="margin-left: 1rem; font-weight: bold; text-decoration: none; color: #555;">تواصل معنا</a>
-    </nav>
-  </header>
+  <!-- ✅ الشريط العلوي -->
+  <div id="header"></div>
 
+  <!-- ✅ المحتوى -->
   <main>
     <h2>من نحن</h2>
-    <p>
-      نحن فريق شغوف بالإبداع والتصميم، نعمل على تحويل اللحظات والقصص إلى مشاهد كرتونية نابضة بالحياة باستخدام أحدث التقنيات.
-      نسعى لجعل كل قصة فريدة تروى بألوان وابتسامة.
-    </p>
+    <p>نحن فريق شغوف بالإبداع والرسوم المتحركة! في "كرتون حياتك"، نتيح لك تحويل قصصك وأفكارك إلى كرتون مميز يعكس شخصيتك.</p>
   </main>
 
-  <footer>
-    جميع الحقوق محفوظة - كرتون حياتك © 2025
-  </footer>
+  <!-- ✅ الشريط السفلي -->
+  <div id="footer"></div>
+
+  <!-- ✅ استدعاء الهيدر والفوتر -->
+  <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
+
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  </script>
 
 </body>
 </html>

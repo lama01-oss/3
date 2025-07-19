@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تواصل معنا - كرتون حياتك</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 3rem auto;
+      background-color: #ffe6f0;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #6a1b9a;
+      margin-bottom: 2rem;
+    }
+
+    label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      color: #333;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.7rem;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 2rem;
+      width: 100%;
+      padding: 0.8rem;
+      background: linear-gradient(to right, #ff99cc, #66ccff);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #ff66b2, #3399ff);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ الشريط العلوي -->
+  <div id="header"></div>
+
+  <!-- ✅ نموذج التواصل -->
+  <main>
+    <h2>📬 نموذج التواصل</h2>
+    <form>
+      <label for="name">الاسم:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="phone">رقم الجوال:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="subject">عنوان الرسالة:</label>
+      <input type="text" id="subject" name="subject" required>
+
+      <label for="message">وصف الرسالة:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">إرسال</button>
+    </form>
+  </main>
+
+  <!-- ✅ الشريط السفلي -->
+  <div id="footer"></div>
+
+  <!-- ✅ تحميل الهيدر والفوتر -->
+  <script>
+    fetch("header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
+
+    fetch("footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>
